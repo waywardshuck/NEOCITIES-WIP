@@ -18,8 +18,9 @@
     <link rel="manifest" href="images/medialog-gallery/site.webmanifest">
     <!---STYLE NOTES 
 
-  MAIN FONT: sour-gummy-regular ["Sour Gummy", Georgia, Times, Times New Roman, serif;]
   HEADINGS FONT: [shuck-regular, Georgia, Times, Times New Roman, serif;]
+  SUBHEADINGS FONT: "DTM-Sans", Georgia, Times, Times New Roman, serif;
+  Homepage inherited font: sour-gummy-regular ["Sour Gummy", Georgia, Times, Times New Roman, serif;]
   off-white : #eae7d4
   off-black: #222342
   red: #7c0000
@@ -30,9 +31,11 @@
     -->
 </head>
 
-<body>
+<body id="top">
     <div class="bg-overlay"> </div>
     <div class="bg-overlay2"> </div>
+
+    <a class="button" id="myBtn" title="Go to top" href="#top"></a>
 
     <!-- MEDIA LOG HEADER -->
     <div id="medialog-header" class="flex">
@@ -49,17 +52,15 @@
                         <!-- CENTERING USING GRID -->
                         <div class="centre">
                             <article class="intro-description">
-                                <p class="sour-gummy-regular"> 'Media' is such an ambiguous term, but this page is to
+                                <p> 'Media' is such an ambiguous term, but this page is to
                                     log
                                     and review TV series, films, games and any other things I read or watch
                                 </p>
-                                <p class="sour-gummy-regular">
-                                    <i>Page theme is heavily inspired by TV World, 'cus i just <img id="medialog-love"
-                                            src="images/Tenna_funnytext_love.png" alt="LOVE"> TV !</i>
+                                <p>Page theme is heavily inspired by <i>TV World</i>, 'cus i just <img id="medialog-love"
+                                            src="images/Tenna_funnytext_love.png" alt="LOVE"> TV!
                                 </p>
                             </article>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -69,7 +70,7 @@
     <!-- FAVOURITES GALLERY-->
 
     <div class="centre">
-        <h2 class="sour-gummy-regular" id="favourites-heading">FAVOURITES</h2>
+        <h2 class="favourites-heading">FAVOURITES</h2>
     </div>
 
     <div class="favourites-container">
@@ -80,8 +81,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" >
-                    <b>Sonic <br> Adventure 2 (2001)</b>
+                <a class="caption-button">
+                    Sonic Adventure 2 (2001)
                 </a>
             </div>
             <div class="inner">
@@ -97,8 +98,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Madoka Magica: The Rebellion Story (2013)</b>
+                <a class="caption-button" >
+                    Madoka Magica: The Rebellion Story (2013)
                 </a>
             </div>
             <div class="inner">
@@ -115,8 +116,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>American Psycho (2000)</b>
+                <a class="caption-button" >
+                    American Psycho (2000)
                 </a>
             </div>
             <div class="inner">
@@ -132,8 +133,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Revolutionary Girl Utena (1997)</b>
+                <a class="caption-button" >
+                    Revolutionary Girl Utena (1997)
                 </a>
             </div>
             <div class="inner">
@@ -145,12 +146,13 @@
 
         <!-- IMAGE 5 -->
         <div id="outer-frame" class="gallery-img-wrapper">
-            <div id="favourites-image" class="more-space-top" style="background-image: url(images/medialog-gallery/poster-columbo.jpg);"></div>
+            <div id="favourites-image" class="more-space-top"
+                style="background-image: url(images/medialog-gallery/poster-columbo.jpg);"></div>
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Columbo (1968-2003)</b>
+                <a class="caption-button" >
+                    Columbo (1968-2003)
                 </a>
             </div>
             <div class="inner">
@@ -166,8 +168,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Shuck (2023)</b>
+                <a class="caption-button" >
+                   Shuck (2023)
                 </a>
             </div>
             <div class="inner">
@@ -179,12 +181,13 @@
 
         <!-- IMAGE 7 -->
         <div id="outer-frame" class="gallery-img-wrapper">
-            <div id="favourites-image" class="more-space-top" style="background-image: url(images/medialog-gallery/poster-moomins.jpg);"></div>
+            <div id="favourites-image" class="more-space-top"
+                style="background-image: url(images/medialog-gallery/poster-moomins.jpg);"></div>
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>The Moomins (1978-1982)</b>
+                <a class="caption-button" >
+                    The Moomins (1978-1982)
                 </a>
             </div>
             <div class="inner">
@@ -200,8 +203,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Howl's Moving Castle (2004)</b>
+                <a class="caption-button" >
+                    Howl's Moving Castle (2004)
                 </a>
             </div>
             <div class="inner">
@@ -217,8 +220,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>The Magnus Archives (2016 - 2021)</b>
+                <a class="caption-button" >
+                    The Magnus Archives (2016 - 2021)
                 </a>
             </div>
             <div class="inner">
@@ -234,8 +237,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Welcome to Night Vale (2012~)</b>
+                <a class="caption-button" >
+                    Welcome to Night Vale (2012~)
                 </a>
             </div>
             <div class="inner">
@@ -251,8 +254,8 @@
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Deltarune (2018~)</b>
+                <a class="caption-button" >
+                    Deltarune (2018~)
                 </a>
             </div>
             <div class="inner">
@@ -264,12 +267,13 @@
 
         <!-- IMAGE 12 -->
         <div id="outer-frame" class="gallery-img-wrapper">
-            <div id="favourites-image" class="more-space-top" style="background-image: url(images/medialog-gallery/poster-kikis.jpg)"></div>
+            <div id="favourites-image" class="more-space-top"
+                style="background-image: url(images/medialog-gallery/poster-kikis.jpg)"></div>
 
             <!-- CAPTION  -->
             <div class="favourites-caption centre">
-                <a class="caption-button" onclick='openCaption()'>
-                    <b>Kiki's Delivery Service (1989)</b>
+                <a class="caption-button" >
+                    Kiki's Delivery Service (1989)
                 </a>
             </div>
             <div class="inner">
@@ -278,6 +282,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- MEDIA LOG START -->
+
+    <div class="centre">
+        <h2 id="nov-heading" class="favourites-heading">NOVEMBER</h2>
     </div>
 
     <!-- MEDIA LOG FOOTER -->

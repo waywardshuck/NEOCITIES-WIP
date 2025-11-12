@@ -14,12 +14,37 @@ html {
     background-size: cover;
     background-attachment: fixed;
     image-rendering: pixelated;
+    scroll-behavior: smooth;
 
 }
 
 
 body {
     line-height: 1.4em;
+    
+}
+
+/* SCROLL TO TOP BUTTON */
+
+#myBtn {
+    z-index: 99999999;
+    position: fixed;
+    bottom: -10px;
+    right: 50px;
+    background-image:url(images/medialog-gallery/scroll-to-top-element.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:150px;
+    height: 150px;
+}
+
+#myBtn:hover {
+    cursor: url("mkewk_tenna_cursor/LINK.cur"), auto;
+    transition: .2s;
+    /* filter creates effect like tv turning on */
+    filter: drop-shadow(0px -20px 10px #f3fad9);
+    margin-bottom: -2px;
 }
 
 /* BACKGROUND STYLING */
@@ -82,6 +107,16 @@ body {
 @font-face {
     font-family: shuck-regular;
     src: url(Shuck-Regular.ttf);
+}
+
+@font-face {
+  font-family: "DTM-Mono";
+  src: url("DTM-Mono.otf");
+}
+
+@font-face {
+  font-family: "DTM-Sans";
+  src: url("DTM-Sans.otf");
 }
 
 h1 {
@@ -235,7 +270,7 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-width: 240px;
+    min-width: 280px;
 }
 
 .centre {
@@ -245,11 +280,13 @@ main {
 
 .intro-description {
     margin-top: -20px;
-    text-align: center;
-    font-size: 1.5em;
+    text-align: left;
+    line-height: 1.5em;
+    font-family: "DTM-Mono", Georgia, Times, Times New Roman, serif;
+    font-size: 1.3em;
     background: url("/images/backgrounds/pinkdots.png");
     background-color: #eae7d4;
-    padding: 1.2em;
+    padding: 1.2em 1.5em;
     filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.2));
 }
 
@@ -281,7 +318,7 @@ main {
 
 /* GALLERY HEADING */
 
-#favourites-heading {
+.favourites-heading {
     max-width: 1200px;
     margin: 50px 10px 0px 10px;
     position: relative;
@@ -291,8 +328,7 @@ main {
     background-color: #d03439;
     color: #eae7d4;
     text-shadow: 1px 2px #7c0000;
-    font-family: "Sour Gummy", Georgia, Times, Times New Roman, serif;
-    font-style: italic;
+    font-family: "DTM-Sans", Georgia, Times, Times New Roman, serif;
     font-weight: 700;
     letter-spacing: 5px;
     padding: 10px 15px;
@@ -313,21 +349,26 @@ main {
 
 .favourites-container #outer-frame {
     margin: 5px;
-    border: 2px solid #b3ab9f;
-    background-color: #dfd7c8;
-    background-size: cover;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
     min-height: 200px;
-    min-width: 150px;
+    min-width: 180px;
     max-width: 180px;
     padding: 1px;
+      background-color: #ede5d8;
+    background-size: cover;
+   /* STYLISED BORDER */
+    box-shadow:
+        0 0 0 2px #dec09e,
+        0 0 0 4px #aa856a,
+        /* this creates top depth shadow */
+        0 -4px 0 4px #62454d;
 }
 
 .favourites-container #favourites-image {
     opacity: 85%;
     background-size: cover;
     background-position: center;
-    border: 3px solid #b3ab9f;
+    border: 3px solid #aa856a;
     min-height: 200px;
     min-width: 150px;
     margin: 3px;
@@ -338,47 +379,60 @@ or weird alignment */
 
 .more-space-top {
     background-position: top !important;
-
-}
-
-/* FAVOURITES GALLERY - CAPTION TOGGLES */
-
-.gallery-img-wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.5s ease-out;
-}
-
-.gallery-img-wrapper .expanded {
-    grid-template-rows: 1fr;
 }
 
 .favourites-caption {
     /* box sizing, margins & border-top 0
    makes it line up with image bottom */
+    font-family: "DTM-Sans", Georgia, Times, Times New Roman, serif;
     box-sizing: border-box;
+    letter-spacing: 1px;
     margin-left: 3px;
     margin-right: 3px;
     margin-top: -4px;
-    background-color: #ede5d8;
-    border: 3px solid #b3ab9f;
+    background-color: #eff8ce;
+    border: 3px solid #aa856a;
     border-top: 0px;
     padding: 5px 10px;
     font-size: 14px;
+    font-weight: lighter;
     text-align: center;
     text-transform: uppercase;
     line-height: 1.2em;
 }
 
+/* FAVOURITES GALLERY - CAPTION TOGGLES */
+
+.favourites-container .a{
+    font-weight: bold;
+}
+
+.caption-collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease-out;
+    background-color: #d03439;
+    
+}
+
 .inner {
-    min-height: 0;
-    overflow: hidden;
+    min-height: 0 !important;
+    font-family: "DTM-Mono", Georgia, Times, Times New Roman, serif;
+    color: #222342;
+    
 }
 
 .caption-collapse p {
     text-align: center;
     padding: 5px 10px;
     font-size: 14px;
+    overflow: hidden;
+}
+
+.caption-collapse.expanded {
+    grid-template-rows: 1fr;
+    background-color: aqua;
+    
 }
 
 /* FOOTER  */
@@ -412,7 +466,7 @@ or weird alignment */
 /* break point for tablet */
 
 /* hides extra banner when textbox overflows */
-@media screen and (max-width:770px) {
+@media screen and (max-width:913px) {
    
     .header-tvtime {
         display: none;
@@ -420,8 +474,20 @@ or weird alignment */
     
 }
 
+/* changes scroll-to-top so it doesn't cover content on smaller screens */
+@media screen and (max-width:1300px) {
+
+    #myBtn {
+        background-image: url(images/F1.gif);
+         right: 5px;
+         width: 80px;
+         height: 80px;
+         bottom: 120px;
+    }
+}
+
 /* centres header when textbox overflows second time */
-@media screen and (max-width:675px) {
+@media screen and (max-width:715px) {
  
     .header {
         justify-content: center !important;
@@ -441,7 +507,6 @@ or weird alignment */
 
     .intro-description {
         margin-top: 0px;
-
     }
 }
 
@@ -449,6 +514,7 @@ or weird alignment */
 
 /* break point for mobile */
 @media screen and (max-width: 500px) {
+
 
     /* CENTERS HEADER ON MOBILE */
     .header {
@@ -471,7 +537,7 @@ or weird alignment */
         margin-left: auto;
     }
 
-    #container-title-intro {
+    #container-title {
         width: 100%;
         height: 100%;
     }
@@ -480,15 +546,9 @@ or weird alignment */
         margin-bottom: 100px;
     }
 
-    /* INTRO BREAKPOINT */
-
-    .intro {
-        margin: auto;
-    }
-
     /* GALLERY BREAKPOINT */
 
-    #favourites-heading {
+    .favourites-heading {
         margin: 20px auto;
         width: calc(100% - 40px);
     }
